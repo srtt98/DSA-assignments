@@ -1,28 +1,54 @@
 
 public class Main {
+
 	public static void main(String[] args) {
-        ToDoList toDoList = new ToDoList();
+		  LinkedList linkedList = new LinkedList();
 
-        // Add some tasks to the list
-        toDoList.addToDo(new Task("go to library "));
-        toDoList.addToDo(new Task("Finish your project"));
-        toDoList.addToDo(new Task("visit your friends ")); 
+	        // Add nodes to the list
+		  linkedList.insertAtPos(10, 1);
+		  linkedList.insertAtPos(22, 2);
+		  linkedList.insertAtPos(32, 3);
+		  linkedList.insertAtPos(45, 4);
+		  linkedList.insertAtPos(50, 5);
 
-        // Print the list
-        System.out.println("To-Do List:");
-        toDoList.viewToDoList();
+	        //a Inserting a new node at position 2
+		  linkedList.insertAtPos(4, 2);
+		  System.out.println("linked list after insertion of 4 at position 2");
+	        // Print the updated list
+		  linkedList.display();
+		  System.out.println();
+		// b Delete node at position 4
+		  linkedList.deleteAtPosition(3); 
+		  
+	        System.out.println("linked list after deletion at position 3");
+	            
+			  linkedList.display();
+			  System.out.println();
+			 // c Delete the node after the node with data 2
+			  linkedList.deleteAfterNode(linkedList.head.next); // Assuming head.next is the node with data 2
+			  System.out.println("linked list after deletion after a node with data 4");
+	            
+		        // Print the updated list
+			  linkedList.display();
+			  System.out.println();
+	
+			  //d searching a node in a singly linked list
+			  // Search for a node with data 45
+		        boolean data = linkedList.searchNode(20);
 
-        // Mark a task as completed
-        toDoList.markTaskCompleted("Finish homework");
+		        if (data) {
+		            System.out.println("Node found in the linked list.");
+		        } else {
+		            System.out.println("Node not found in the linked list.");
+		        }
+		    }
+		
 
-        // Print the list again
-        System.out.println("\nTo-Do List after marking a task as completed:");
-        toDoList.viewToDoList();
+	  
+	}
+	
 
-        // Remove a task from the list
-        toDoList.removeTask("Call the doctor");
-        toDoList.viewToDoList();
+		
+	
 
-        // Print
-    }
-}
+
